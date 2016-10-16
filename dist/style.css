@@ -54,7 +54,9 @@ a:active {
     position: relative;
     display: block;
     text-align: center;
-    border-bottom: 1px solid #d5d5d5;
+    /*border-bottom: 1px solid #ccc;*/
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    z-index: 9999;
 }
 
 .pass-header-title {

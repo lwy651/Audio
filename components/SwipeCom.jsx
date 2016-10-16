@@ -4,6 +4,10 @@ import { Link } from 'react-router';
 import swiperstyle from 'swiper/dist/css/swiper.min.css'
 
 class Swipepane extends React.Component{
+	constructor(props){
+		super(props)
+		this.swipesPic = ['./a.jpg','./b.jpg','./a.jpg'];
+	};
 	componentDidMount() {
 		this.swiper = new Swiper('.swiper-container',
 		{
@@ -21,20 +25,15 @@ class Swipepane extends React.Component{
 		return(
 			<div className="swiper-container">
 		        <div className="swiper-wrapper">
-		            <div className="swiper-slide">
-		            <Link to='www.baidu.com'>
-		            	<img data-src='./a.jpg' className="swiper-lazy"/>
-		            	<div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-		            </Link>
-		            </div>
-		            <div className="swiper-slide">
-		            	<img data-src='./a.jpg' className="swiper-lazy"/>
-		            	<div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-		            </div>
-		            <div className="swiper-slide">
-		            	<img data-src='./a.jpg' className="swiper-lazy"/>
-		            	<div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-		            </div>
+		            {this.swipesPic.map((result)=>{
+		            	return(
+		            		<div className="swiper-slide">
+				            	<img data-src={result} className="swiper-lazy"/>
+				            	<div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+				            </div>
+				        );
+		            })}
+		            
 		        </div>
 		        <div className="swiper-pagination swiper-pagination-white"></div>
     		</div>

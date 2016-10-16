@@ -24,7 +24,7 @@ class App extends React.Component{
 		return(
 			<div>
 			<div><Link to='/about'>about</Link></div>
-      <button onClick={this.handclick}>alert</button>
+      		<button onClick={this.handclick}>alert</button>
 			</div>
 		);
 	}
