@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import WebSound from './SoundPlay.jsx';
+import Swipepane from './SwipeCom.jsx';
+
+let websound1 = WebSound.getInstance();
+let websound2 = WebSound.getInstance();
 
 
 class Home extends React.Component{
@@ -14,15 +18,15 @@ class Home extends React.Component{
     };
     btnClick(event){
     	this.setState({a:++this.state.a});
-    	console.log(this);
-    	this.WebSound.Playsound();
+    	websound1.addnum();
+    };
+    cutClick(event){
+    	websound2.reducenum();
     };
 	render(){
 		return (
 			<div>
-			<Link to='/home'>about</Link>
-			<div>{this.state.a}</div>
-			<button onClick={this.btnClick}>add</button>
+				<Swipepane />
 			</div>
 		);
 	}
