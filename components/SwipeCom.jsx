@@ -6,7 +6,7 @@ import swiperstyle from 'swiper/dist/css/swiper.min.css'
 class Swipepane extends React.Component{
 	constructor(props){
 		super(props)
-		this.swipesPic = ['./a.jpg','./b.jpg','./a.jpg'];
+		this.swipesPic = ['./a.jpg','./b.jpg','./c.jpg'];
 	};
 	componentDidMount() {
 		this.swiper = new Swiper('.swiper-container',
@@ -27,7 +27,7 @@ class Swipepane extends React.Component{
 		        <div className="swiper-wrapper">
 		            {this.swipesPic.map((result)=>{
 		            	return(
-		            		<div className="swiper-slide">
+		            		<div key={result} className="swiper-slide">
 				            	<img data-src={result} className="swiper-lazy"/>
 				            	<div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 				            </div>
